@@ -25,47 +25,47 @@ Built on a permanent **$0 budget** using free-tier LLMs (Groq, Mistral, Ollama),
 ```mermaid
 flowchart TD
     subgraph INGEST["1. Ingestion & Scoped Workspace"]
-        A1["YouTube URL / Video ID"] --> B1["2-Tier Transcriber<br/>(Captions ➔ Groq Whisper)"]
-        A2["Comments File<br/>(PDF / DOCX / CSV / JSON)"] --> B2["Document Comments Parser"]
-        B1 --> C1[("Transcript Chunks<br/>[MM:SS] Timestamps")]
+        A1["YouTube URL / Video ID"] --> B1["2-Tier Transcriber<br/>Captions or Groq Whisper"]
+        A2["Comments File<br/>PDF / DOCX / CSV / JSON"] --> B2["Document Comments Parser"]
+        B1 --> C1[("Transcript Chunks<br/>Timestamps [MM:SS]")]
         B2 --> C2[("Queued Comments")]
     end
 
     subgraph WORKSPACE["Target Video Workspace"]
-        C1 --> WS["Scoped List Workspace<br/>(e.g., 'Masterclass Video #1')"]
+        C1 --> WS["Scoped List Workspace<br/>e.g. Masterclass Video 1"]
         C2 --> WS
     end
 
     subgraph TRIAGE["2. LangGraph Agent Pipeline"]
-        WS --> D["Classifier Node<br/>(Groq Llama 3.3 70B / 20B)"]
-        D -->|Questions & Inquiries| E["Hybrid Retriever<br/>Dense 384d + BM25 Lexical"]
-        D -->|Praise / Collab / Spam / Complaint| R["Granular Autopilot Rules Engine"]
-        E --> F["Grounded Drafter Node<br/>(Enforces [MM:SS] Citations)"]
+        WS --> D["Classifier Node<br/>Groq Llama 3.3 70B / 20B"]
+        D -->|"Questions & Inquiries"| E["Hybrid Retriever<br/>Dense 384d + BM25 Lexical"]
+        D -->|"Praise / Collab / Spam / Complaint"| R["Granular Autopilot Rules Engine"]
+        E --> F["Grounded Drafter Node<br/>Enforces [MM:SS] Citations"]
         F --> G{"Is Draft ABSTAIN?"}
-        G -->|Yes (Unsupported)| R
-        G -->|No| H["Two-Stage Faithfulness Verifier"]
-        H -->|Stage 1: Local CPU Overlap| I{"Overlap Pass?"}
-        I -->|Pass / Fail Fast| R
-        I -->|Borderline| J["Stage 2: LLM Judge<br/>(Mistral Large-4)"]
+        G -->|"Yes - Unsupported"| R
+        G -->|"No"| H["Two-Stage Faithfulness Verifier"]
+        H -->|"Stage 1: Local CPU Overlap"| I{"Overlap Pass?"}
+        I -->|"Pass / Fail Fast"| R
+        I -->|"Borderline"| J["Stage 2: LLM Judge<br/>Mistral Large-4"]
         J --> R
     end
 
     subgraph SAFETY["3. Safety & Autopilot Rules Engine"]
         R --> K{"Rule Evaluation"}
-        K -->|Sensitive Override| ESC["ESCALATE<br/>(Flagged to Creator)"]
-        K -->|Negative Keyword Match| ESC
-        K -->|Low Confidence / Abstain| DRF["DRAFT<br/>(Review Queue)"]
-        K -->|Verified Pass| AUT{"Shadow Mode Active?"}
-        AUT -->|Yes (Default Safety)| DRF
-        AUT -->|No| PUB["AUTO<br/>(Live Auto-Publish)"]
+        K -->|"Sensitive Override"| ESC["ESCALATE<br/>Flagged to Creator"]
+        K -->|"Negative Keyword Match"| ESC
+        K -->|"Low Confidence / Abstain"| DRF["DRAFT<br/>Review Queue"]
+        K -->|"Verified Pass"| AUT{"Shadow Mode Active?"}
+        AUT -->|"Yes - Default Safety"| DRF
+        AUT -->|"No"| PUB["AUTO<br/>Live Auto-Publish"]
     end
 
     subgraph STUDIO["4. Linear-Grade Creator Studio (Next.js 14)"]
-        DRF --> UI["Editorial Review Queue<br/>(40-48px rows, J/K nav, Cmd+K)"]
+        DRF --> UI["Editorial Review Queue<br/>Dense rows, J/K nav, Cmd+K"]
         ESC --> UI
         PUB --> UI
-        UI -->|Ask AI Guidance| ASK["Ask AI Assistant<br/>(De-escalation notices)"]
-        UI -->|One-Click Approve / Edit / Reject| AUD[("Immutable Audit Log")]
+        UI -->|"Ask AI Guidance"| ASK["Ask AI Assistant<br/>De-escalation notices"]
+        UI -->|"One-Click Action"| AUD[("Immutable Audit Log")]
     end
 ```
 
@@ -76,21 +76,21 @@ flowchart TD
 flowchart LR
     URL["YouTube URL / ID"] --> CHECK{"Closed Captions<br/>Available?"}
     
-    CHECK -->|Yes (Tier 1: $0)| TIER1["youtube-transcript-api<br/>Instant Fetch in < 250ms"]
-    CHECK -->|No (Tier 2: Fallback)| TIER2["yt-dlp Audio Stream ➔<br/>Groq Whisper Large-v3"]
+    CHECK -->|"Yes - Tier 1: Free"| TIER1["youtube-transcript-api<br/>Instant Fetch in under 250ms"]
+    CHECK -->|"No - Tier 2: Fallback"| TIER2["yt-dlp Audio Stream to<br/>Groq Whisper Large-v3"]
     
-    TIER1 --> FORMAT["Segment & Prepend Markers<br/>[04:12] 'In this tutorial...'"]
+    TIER1 --> FORMAT["Segment & Prepend Markers<br/>[04:12] In this tutorial..."]
     TIER2 --> FORMAT
     
-    FORMAT --> CHUNKER["Transcript Chunker<br/>(200-400 words per chunk)"]
+    FORMAT --> CHUNKER["Transcript Chunker<br/>200-400 words per chunk"]
     
     CHUNKER --> DENSE["Local CPU Dense Embedding<br/>all-MiniLM-L6-v2 (384d)"]
-    CHUNKER --> BM25["BM25 Lexical Indexer<br/>(Exact technical keywords)"]
+    CHUNKER --> BM25["BM25 Lexical Indexer<br/>Exact technical keywords"]
     
-    DENSE --> RRF["Reciprocal Rank Fusion (RRF)<br/>Score = 0.5 * Dense + 0.5 * BM25"]
+    DENSE --> RRF["Reciprocal Rank Fusion<br/>Score = 0.5 Dense + 0.5 BM25"]
     BM25 --> RRF
     
-    RRF --> SCOPED[("Scoped Vector Store<br/>(Isolated strictly by video_id)")]
+    RRF --> SCOPED[("Scoped Vector Store<br/>Isolated strictly by video_id")]
 ```
 
 ---
@@ -98,31 +98,31 @@ flowchart LR
 ### 3. Granular Autopilot Decision Tree & Hard Safety Invariants
 ```mermaid
 flowchart TD
-    START(["Comment Enters Autopilot Router"]) --> SENSITIVE{"Category is 'sensitive'<br/>OR Crisis / Legal / Self-Harm?"}
+    START(["Comment Enters Autopilot Router"]) --> SENSITIVE{"Category is sensitive<br/>OR Crisis / Legal / Self-Harm?"}
     
-    SENSITIVE -->|YES| ESC_SENS["🔴 ESCALATE<br/>Reason: 'Sensitive Content Guardrail'<br/>(Hard Invariant: CANNOT be bypassed)"]
+    SENSITIVE -->|"YES"| ESC_SENS["🔴 ESCALATE<br/>Reason: Sensitive Content Guardrail<br/>Hard Invariant: CANNOT be bypassed"]
     
-    SENSITIVE -->|NO| SPAM{"Category is 'spam'<br/>OR Crypto / Link Farming?"}
+    SENSITIVE -->|"NO"| SPAM{"Category is spam<br/>OR Crypto / Link Farming?"}
     
-    SPAM -->|YES| ESC_SPAM["🔴 ESCALATE<br/>Reason: 'Spam Suppression'<br/>(Hard Invariant: Zero automated reply)"]
+    SPAM -->|"YES"| ESC_SPAM["🔴 ESCALATE<br/>Reason: Spam Suppression<br/>Hard Invariant: Zero automated reply"]
     
-    SPAM -->|NO| RULES["Evaluate Active Autopilot Rules<br/>(Ordered by Priority: #1 ➔ #4)"]
+    SPAM -->|"NO"| RULES["Evaluate Active Autopilot Rules<br/>Ordered by Priority: #1 to #4"]
     
-    RULES --> R1{"Rule #1: Negative Keywords<br/>('refund', 'scam', 'lawyer', 'broken')"}
-    R1 -->|Matched| ESC_NEG["🔴 ESCALATE<br/>Reason: Matched high-risk keywords"]
+    RULES --> R1{"Rule #1: Negative Keywords<br/>refund, scam, lawyer, broken"}
+    R1 -->|"Matched"| ESC_NEG["🔴 ESCALATE<br/>Reason: Matched high-risk keywords"]
     
-    R1 -->|Pass| R2{"Rule #2: Collab / Complaint<br/>('business_collab', 'complaint')"}
-    R2 -->|Matched| ESC_COLLAB["🔴 ESCALATE<br/>Reason: Creator personal attention needed"]
+    R1 -->|"Pass"| R2{"Rule #2: Collab / Complaint<br/>business_collab, complaint"}
+    R2 -->|"Matched"| ESC_COLLAB["🔴 ESCALATE<br/>Reason: Creator personal attention needed"]
     
-    R2 -->|Pass| R3{"Rule #3: Verified FAQ Draft<br/>Faithfulness ≥ 0.80 & Citations [MM:SS]"}
-    R3 -->|Matched| DRAFT_FAQ["🔵 DRAFT<br/>Reason: Grounded technical draft queued"]
+    R2 -->|"Pass"| R3{"Rule #3: Verified FAQ Draft<br/>Faithfulness >= 0.80 and Citations [MM:SS]"}
+    R3 -->|"Matched"| DRAFT_FAQ["🔵 DRAFT<br/>Reason: Grounded technical draft queued"]
     
-    R2 -->|Pass| R4{"Rule #4: Short Safe Praise<br/>Word count ≤ 25 & Conf ≥ 0.80"}
-    R4 -->|Matched| AUTO_CHECK{"Is Shadow Mode Enabled?"}
-    AUTO_CHECK -->|Yes (Default)| DRAFT_SHADOW["🔵 DRAFT<br/>Reason: Qualified for AUTO, held in Shadow Mode"]
-    AUTO_CHECK -->|No| AUTO_PUB["🟢 AUTO<br/>Reason: Auto-reply armed"]
+    R3 -->|"Pass"| R4{"Rule #4: Short Safe Praise<br/>Word count &lt;= 25 and Conf >= 0.80"}
+    R4 -->|"Matched"| AUTO_CHECK{"Is Shadow Mode Enabled?"}
+    AUTO_CHECK -->|"Yes - Default"| DRAFT_SHADOW["🔵 DRAFT<br/>Reason: Qualified for AUTO, held in Shadow Mode"]
+    AUTO_CHECK -->|"No"| AUTO_PUB["🟢 AUTO<br/>Reason: Auto-reply armed"]
     
-    R4 -->|No Rule Matched| FALLBACK["🔵 DRAFT<br/>Reason: Standard Baseline Review Queue"]
+    R4 -->|"No Rule Matched"| FALLBACK["🔵 DRAFT<br/>Reason: Standard Baseline Review Queue"]
 ```
 
 ---
@@ -130,7 +130,7 @@ flowchart TD
 ### 4. Comment Lifecycle State Machine
 ```mermaid
 stateDiagram-v2
-    [*] --> new: Ingested from YouTube API or Document
+    [*] --> new: Ingested from YouTube or Document
     new --> processing: Batch Triage Worker Started
     
     state processing {
@@ -138,7 +138,7 @@ stateDiagram-v2
         Classifying --> ScopedRetrieval: If Technical Question
         Classifying --> AutopilotEvaluation: If Non-Question
         ScopedRetrieval --> GroundedDrafting: Transcript Citations
-        GroundedDrafting --> FaithfulnessVerification: Stage 1 CPU + Stage 2 Judge
+        GroundedDrafting --> FaithfulnessVerification: CPU Overlap + LLM Judge
         FaithfulnessVerification --> AutopilotEvaluation
     }
     
@@ -146,14 +146,14 @@ stateDiagram-v2
     processing --> drafted: Held for Creator Review
     processing --> approved: Qualified for AUTO (Shadow Mode OFF)
     
-    drafted --> approved: Creator clicks 'Approve' (Key 'A')
-    drafted --> drafted: Creator edits draft inline (Key 'E')
-    drafted --> rejected: Creator clicks 'Reject' (Key 'R')
+    drafted --> approved: Approve Action (Key A)
+    drafted --> drafted: Inline Edit (Key E)
+    drafted --> rejected: Reject Action (Key R)
     
-    escalated --> approved: Creator writes custom reply
-    escalated --> rejected: Creator marks spam / dismisses
+    escalated --> approved: Custom Creator Reply
+    escalated --> rejected: Dismissed / Marked Spam
     
-    approved --> published: Posted to YouTube via OAuth API
+    approved --> published: Posted to YouTube via OAuth
     published --> [*]
     rejected --> [*]
 ```
