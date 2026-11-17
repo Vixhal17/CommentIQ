@@ -1,0 +1,74 @@
+roles:
+  classifier:
+    primary:
+      provider: "groq"
+      model: "openai/gpt-oss-20b"
+      temperature: 0.0
+      max_tokens: 500
+    fallbacks:
+      - provider: "mistral"
+        model: "mistral-small-2603"
+        temperature: 0.0
+        max_tokens: 500
+      - provider: "ollama"
+        model: "llama3.2:3b"
+        temperature: 0.0
+        max_tokens: 500
+
+  drafter:
+    primary:
+      provider: "groq"
+      model: "openai/gpt-oss-120b"
+      temperature: 0.2
+      max_tokens: 1000
+    fallbacks:
+      - provider: "mistral"
+        model: "mistral-large-4"
+        temperature: 0.2
+        max_tokens: 1000
+      - provider: "ollama"
+        model: "llama3.2:3b"
+        temperature: 0.2
+        max_tokens: 1000
+
+  judge:
+    primary:
+      provider: "mistral"
+      model: "mistral-large-4"
+      temperature: 0.0
+      max_tokens: 600
+    fallbacks:
+      - provider: "groq"
+        model: "llama-3.3-70b-versatile"
+        temperature: 0.0
+        max_tokens: 600
+      - provider: "ollama"
+        model: "llama3.2:3b"
+        temperature: 0.0
+        max_tokens: 600
+
+verifier:
+  local_nli_model: "cross-encoder/nli-deberta-v3-small"
+  independence_guard: true
+
+providers:
+  groq:
+    base_url: "https://api.groq.com/openai/v1"
+    api_key_env: "GROQ_API_KEY"
+  mistral:
+    base_url: "https://api.mistral.ai/v1"
+    api_key_env: "MISTRAL_API_KEY"
+  ollama:
+    base_url: "http://localhost:11434/v1"
+    api_key_env: null
+
+budget:
+  daily_token_limit: 100000
+  cache_enabled: true
+
+retry:
+  max_retries: 3
+  backoff_base_seconds: 1.0
+  max_backoff_seconds: 15.0
+  jitter: true
+
