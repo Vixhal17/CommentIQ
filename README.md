@@ -9,17 +9,6 @@
 [![Tests](https://img.shields.io/badge/tests-52%20passing-brightgreen.svg?style=flat-square)](#testing)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](./LICENSE)
 
-![Review queue](docs/screenshot-queue.png)
-
-<details>
-<summary>More screenshots</summary>
-
-![Detail drawer with transcript citations](docs/screenshot-drawer.png)
-
-![Autopilot rules and dry-run simulator](docs/screenshot-autopilot.png)
-
-</details>
-
 ---
 
 ## Table of Contents
@@ -35,8 +24,7 @@
 9. [Usage Walkthrough](#usage-walkthrough)
 10. [Testing](#testing)
 11. [Project Structure](#project-structure)
-12. [Roadmap](#roadmap)
-13. [License](#license)
+12. [License](#license)
 
 ---
 
@@ -214,7 +202,7 @@ Questions about topics the video does not cover (for example, asking about AWS L
 | p50 | Cached and non-question path: regex routing, LangGraph state execution, SHA-256 cache hits | 13.5 ms |
 | p95 | Full local CPU retrieval pipeline: 384d MiniLM embedding, BM25 ranking, score fusion, citation verification | 56.0 ms |
 
-These figures measure **local compute only**. They exclude network calls to the LLM providers (classification, drafting, LLM judge), which add provider-dependent latency of typically hundreds of milliseconds to seconds on a cache miss. End-to-end uncached latency has not been benchmarked yet (see [Roadmap](#roadmap)).
+These figures measure **local compute only**. They exclude network calls to the LLM providers (classification, drafting, LLM judge), which add provider-dependent latency of typically hundreds of milliseconds to seconds on a cache miss. End-to-end uncached latency has not been benchmarked.
 
 ### Caveats
 
@@ -351,17 +339,6 @@ CommentIQ/
 ├── EVALUATION.md             # Detailed benchmark report
 └── .env.example
 ```
-
----
-
-## Roadmap
-
-- [x] **Batch 1:** YouTube URL ingestion with Groq Whisper fallback
-- [x] **Batch 2:** Autopilot rules engine with dry-run simulator
-- [x] **Batch 3:** Creator persona tone cloner with few-shot drafting
-- [ ] **Batch 4:** Audience insights and knowledge-gap detector
-- [ ] Stronger evaluation: larger dataset, independently labeled, abstention-prompted RAG baseline
-- [ ] Measured uncached end-to-end latency
 
 ---
 
