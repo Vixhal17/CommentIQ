@@ -1,0 +1,61 @@
+{
+  "classification": {
+    "accuracy": 0.9,
+    "macro_f1": 0.8813,
+    "per_class": {
+      "question": {
+        "precision": 0.95,
+        "recall": 0.95,
+        "f1": 0.95,
+        "support": 20
+      },
+      "praise": {
+        "precision": 0.9333,
+        "recall": 0.9333,
+        "f1": 0.9333,
+        "support": 15
+      },
+      "complaint": {
+        "precision": 0.8571,
+        "recall": 0.8571,
+        "f1": 0.8571,
+        "support": 7
+      },
+      "business_collab": {
+        "precision": 0.8571,
+        "recall": 0.8571,
+        "f1": 0.8571,
+        "support": 7
+      },
+      "technical_correction": {
+        "precision": 0.8571,
+        "recall": 0.8571,
+        "f1": 0.8571,
+        "support": 7
+      },
+      "spam": {
+        "precision": 0.8571,
+        "recall": 0.8571,
+        "f1": 0.8571,
+        "support": 7
+      },
+      "sensitive": {
+        "precision": 0.8571,
+        "recall": 0.8571,
+        "f1": 0.8571,
+        "support": 7
+      }
+    }
+  },
+  "safety": {
+    "escalation_recall": 0.9714,
+    "escalation_precision": 0.9714,
+    "escalation_f1": 0.9714,
+    "incorrect_auto_replies": 15,
+    "abstention_accuracy": 0.9,
+    "mean_faithfulness": 0.6,
+    "latency_p50_ms": 13.5,
+    "latency_p95_ms": 56.0,
+    "total_evaluated": 70
+  }
+}

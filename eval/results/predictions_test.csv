@@ -1,0 +1,71 @@
+comment_id,split,true_category,pred_category,expected_action,pred_action,is_answerable,abstained,faithfulness,retrieval_score,draft_text,reason,judge_independent,latency_ms
+eval_006,test,question,sensitive,AUTO,ESCALATE,True,False,1.0,0.0,,Sensitive or safety content detected; escalated for creator review,True,12.48
+eval_007,test,question,question,AUTO,DRAFT,True,False,0.2,0.5312,Answer citing [00:45] based on transcript.,Draft faithfulness score (0.20) below threshold (0.75); requires human verification,True,54.94
+eval_008,test,question,question,AUTO,DRAFT,True,False,0.2,0.516,Answer citing [00:45] based on transcript.,Draft faithfulness score (0.20) below threshold (0.75); requires human verification,True,49.0
+eval_009,test,question,question,AUTO,DRAFT,True,False,0.2,0.3111,Answer citing [00:45] based on transcript.,Retrieval similarity score (0.31) below threshold (0.35); unverified context,True,45.15
+eval_010,test,question,question,AUTO,DRAFT,True,False,0.2,0.1391,Answer citing [00:45] based on transcript.,Retrieval similarity score (0.14) below threshold (0.35); unverified context,True,43.99
+eval_011,test,question,question,AUTO,DRAFT,True,False,0.2,0.4073,Answer citing [00:45] based on transcript.,Draft faithfulness score (0.20) below threshold (0.75); requires human verification,True,51.93
+eval_012,test,question,question,AUTO,DRAFT,True,False,0.2,0.1805,Answer citing [00:45] based on transcript.,Retrieval similarity score (0.18) below threshold (0.35); unverified context,True,47.19
+eval_013,test,question,question,AUTO,DRAFT,True,False,0.2,0.1481,Answer citing [00:45] based on transcript.,Retrieval similarity score (0.15) below threshold (0.35); unverified context,True,62.87
+eval_014,test,question,question,AUTO,DRAFT,True,False,0.2,0.13,Answer citing [00:45] based on transcript.,Retrieval similarity score (0.13) below threshold (0.35); unverified context,True,49.65
+eval_015,test,question,question,AUTO,DRAFT,True,False,0.2,0.2449,Answer citing [00:45] based on transcript.,Retrieval similarity score (0.24) below threshold (0.35); unverified context,True,43.41
+eval_021,test,question,question,DRAFT,DRAFT,False,False,0.2,0.1233,Answer citing [00:45] based on transcript.,Retrieval similarity score (0.12) below threshold (0.35); unverified context,True,46.82
+eval_022,test,question,question,DRAFT,DRAFT,False,True,1.0,0.1468,ABSTAIN,Insufficient evidence found in video transcript; flagged for creator answer,True,48.92
+eval_023,test,question,question,DRAFT,DRAFT,False,True,1.0,0.2537,ABSTAIN,Insufficient evidence found in video transcript; flagged for creator answer,True,46.4
+eval_024,test,question,question,DRAFT,DRAFT,False,True,1.0,0.27,ABSTAIN,Insufficient evidence found in video transcript; flagged for creator answer,True,49.2
+eval_025,test,question,question,DRAFT,DRAFT,False,True,1.0,0.1857,ABSTAIN,Insufficient evidence found in video transcript; flagged for creator answer,True,48.99
+eval_026,test,question,question,DRAFT,DRAFT,False,True,1.0,0.2291,ABSTAIN,Insufficient evidence found in video transcript; flagged for creator answer,True,46.59
+eval_027,test,question,question,DRAFT,DRAFT,False,True,1.0,0.2275,ABSTAIN,Insufficient evidence found in video transcript; flagged for creator answer,True,45.03
+eval_028,test,question,question,DRAFT,DRAFT,False,True,1.0,0.2266,ABSTAIN,Insufficient evidence found in video transcript; flagged for creator answer,True,64.09
+eval_029,test,question,question,DRAFT,DRAFT,False,True,1.0,0.2077,ABSTAIN,Insufficient evidence found in video transcript; flagged for creator answer,True,51.72
+eval_030,test,question,question,DRAFT,DRAFT,False,True,1.0,0.3262,ABSTAIN,Insufficient evidence found in video transcript; flagged for creator answer,True,61.03
+eval_036,test,praise,question,DRAFT,DRAFT,False,True,1.0,0.1353,ABSTAIN,Insufficient evidence found in video transcript; flagged for creator answer,True,56.95
+eval_037,test,praise,praise,DRAFT,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,12.11
+eval_038,test,praise,praise,AUTO,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,11.69
+eval_039,test,praise,praise,AUTO,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,11.27
+eval_040,test,praise,praise,AUTO,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,12.52
+eval_041,test,praise,praise,AUTO,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,12.2
+eval_042,test,praise,praise,AUTO,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,11.29
+eval_043,test,praise,praise,DRAFT,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,10.37
+eval_044,test,praise,praise,DRAFT,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,10.76
+eval_045,test,praise,praise,DRAFT,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,12.82
+eval_046,test,praise,praise,DRAFT,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,10.32
+eval_047,test,praise,praise,DRAFT,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,11.12
+eval_048,test,praise,praise,DRAFT,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,11.36
+eval_049,test,praise,praise,AUTO,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,12.58
+eval_050,test,praise,praise,AUTO,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,12.37
+eval_054,test,complaint,praise,ESCALATE,AUTO,False,False,1.0,0.0,,Short safe praise; auto-reply enabled,True,14.19
+eval_055,test,complaint,complaint,ESCALATE,ESCALATE,False,False,1.0,0.0,,Viewer complaint or frustration; creator personal attention required,True,13.58
+eval_056,test,complaint,complaint,ESCALATE,ESCALATE,False,False,1.0,0.0,,Viewer complaint or frustration; creator personal attention required,True,13.88
+eval_057,test,complaint,complaint,ESCALATE,ESCALATE,False,False,1.0,0.0,,Viewer complaint or frustration; creator personal attention required,True,13.23
+eval_058,test,complaint,complaint,ESCALATE,ESCALATE,False,False,1.0,0.0,,Viewer complaint or frustration; creator personal attention required,True,13.2
+eval_059,test,complaint,complaint,ESCALATE,ESCALATE,False,False,1.0,0.0,,Viewer complaint or frustration; creator personal attention required,True,14.84
+eval_060,test,complaint,complaint,ESCALATE,ESCALATE,False,False,1.0,0.0,,Viewer complaint or frustration; creator personal attention required,True,22.47
+eval_064,test,business_collab,complaint,ESCALATE,ESCALATE,False,False,1.0,0.0,,Viewer complaint or frustration; creator personal attention required,True,13.39
+eval_065,test,business_collab,business_collab,ESCALATE,ESCALATE,False,False,1.0,0.0,,Business collaboration inquiry; creator personal attention required,True,12.97
+eval_066,test,business_collab,business_collab,ESCALATE,ESCALATE,False,False,1.0,0.0,,Business collaboration inquiry; creator personal attention required,True,11.85
+eval_067,test,business_collab,business_collab,ESCALATE,ESCALATE,False,False,1.0,0.0,,Business collaboration inquiry; creator personal attention required,True,14.65
+eval_068,test,business_collab,business_collab,ESCALATE,ESCALATE,False,False,1.0,0.0,,Business collaboration inquiry; creator personal attention required,True,13.37
+eval_069,test,business_collab,business_collab,ESCALATE,ESCALATE,False,False,1.0,0.0,,Business collaboration inquiry; creator personal attention required,True,12.46
+eval_070,test,business_collab,business_collab,ESCALATE,ESCALATE,False,False,1.0,0.0,,Business collaboration inquiry; creator personal attention required,True,14.95
+eval_074,test,technical_correction,business_collab,ESCALATE,ESCALATE,False,False,1.0,0.0,,Business collaboration inquiry; creator personal attention required,True,13.25
+eval_075,test,technical_correction,technical_correction,ESCALATE,ESCALATE,False,False,1.0,0.0,,Technical bug / code correction reported; creator personal attention required,True,12.86
+eval_076,test,technical_correction,technical_correction,ESCALATE,ESCALATE,False,False,1.0,0.0,,Technical bug / code correction reported; creator personal attention required,True,12.53
+eval_077,test,technical_correction,technical_correction,ESCALATE,ESCALATE,False,False,1.0,0.0,,Technical bug / code correction reported; creator personal attention required,True,15.46
+eval_078,test,technical_correction,technical_correction,ESCALATE,ESCALATE,False,False,1.0,0.0,,Technical bug / code correction reported; creator personal attention required,True,13.56
+eval_079,test,technical_correction,technical_correction,ESCALATE,ESCALATE,False,False,1.0,0.0,,Technical bug / code correction reported; creator personal attention required,True,13.0
+eval_080,test,technical_correction,technical_correction,ESCALATE,ESCALATE,False,False,1.0,0.0,,Technical bug / code correction reported; creator personal attention required,True,20.13
+eval_084,test,spam,technical_correction,ESCALATE,ESCALATE,False,False,1.0,0.0,,Technical bug / code correction reported; creator personal attention required,True,14.73
+eval_085,test,spam,spam,ESCALATE,ESCALATE,False,False,1.0,0.0,,Detected promotional spam or scam; flagged for deletion/review (zero automated reply),True,12.96
+eval_086,test,spam,spam,ESCALATE,ESCALATE,False,False,1.0,0.0,,Detected promotional spam or scam; flagged for deletion/review (zero automated reply),True,15.12
+eval_087,test,spam,spam,ESCALATE,ESCALATE,False,False,1.0,0.0,,Detected promotional spam or scam; flagged for deletion/review (zero automated reply),True,13.48
+eval_088,test,spam,spam,ESCALATE,ESCALATE,False,False,1.0,0.0,,Detected promotional spam or scam; flagged for deletion/review (zero automated reply),True,13.93
+eval_089,test,spam,spam,ESCALATE,ESCALATE,False,False,1.0,0.0,,Detected promotional spam or scam; flagged for deletion/review (zero automated reply),True,13.33
+eval_090,test,spam,spam,ESCALATE,ESCALATE,False,False,1.0,0.0,,Detected promotional spam or scam; flagged for deletion/review (zero automated reply),True,13.45
+eval_094,test,sensitive,spam,ESCALATE,ESCALATE,False,False,1.0,0.0,,Detected promotional spam or scam; flagged for deletion/review (zero automated reply),True,13.87
+eval_095,test,sensitive,sensitive,ESCALATE,ESCALATE,False,False,1.0,0.0,,Sensitive or safety content detected; escalated for creator review,True,12.5
+eval_096,test,sensitive,sensitive,ESCALATE,ESCALATE,False,False,1.0,0.0,,Sensitive or safety content detected; escalated for creator review,True,12.31
+eval_097,test,sensitive,sensitive,ESCALATE,ESCALATE,False,False,1.0,0.0,,Sensitive or safety content detected; escalated for creator review,True,11.62
+eval_098,test,sensitive,sensitive,ESCALATE,ESCALATE,False,False,1.0,0.0,,Sensitive or safety content detected; escalated for creator review,True,13.22
+eval_099,test,sensitive,sensitive,ESCALATE,ESCALATE,False,False,1.0,0.0,,Sensitive or safety content detected; escalated for creator review,True,12.82
+eval_100,test,sensitive,sensitive,ESCALATE,ESCALATE,False,False,1.0,0.0,,Sensitive or safety content detected; escalated for creator review,True,12.77

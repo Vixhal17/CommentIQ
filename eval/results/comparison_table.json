@@ -1,0 +1,17 @@
+{
+  "Baseline_A": {
+    "abstention_rate": 0.0,
+    "hallucination_count": 15,
+    "hallucination_rate": 1.0
+  },
+  "Baseline_B": {
+    "abstention_rate": 0.0,
+    "hallucination_count": 15,
+    "hallucination_rate": 1.0
+  },
+  "Baseline_C": {
+    "abstention_rate": 0.8667,
+    "hallucination_count": 2,
+    "hallucination_rate": 0.1333
+  }
+}

@@ -1,0 +1,102 @@
+comment_id,youtube_video_id,author,text,true_category,is_answerable,expected_action,split,source
+eval_001,vid_101,DevLearner,What python version do I need for this project?,question,true,AUTO,val,synthetic
+eval_002,vid_101,PodmanFan,Can I run the database with Podman instead of Docker?,question,true,AUTO,val,synthetic
+eval_003,vid_101,DbAdmin,What database and vector extension is used here?,question,true,AUTO,val,synthetic
+eval_004,vid_101,SecGuy,How are OAuth refresh tokens encrypted in the database?,question,true,AUTO,val,synthetic
+eval_005,vid_101,VectorPro,What dimension are the chunk embeddings?,question,true,AUTO,val,synthetic
+eval_006,vid_101,Coder101,How many transcript chunks are retrieved for each question?,question,true,AUTO,test,synthetic
+eval_007,vid_101,StudentA,What should the drafter output if the transcript has no answer?,question,true,AUTO,test,synthetic
+eval_008,vid_101,WebDev,What frontend framework is used for the review queue in the next video?,question,true,AUTO,test,synthetic
+eval_009,vid_101,AIEngineer,What free OpenAI-compatible LLM providers were mentioned?,question,true,AUTO,test,synthetic
+eval_010,vid_101,Pythonista,Why do we provide default values in dictionary lookups?,question,true,AUTO,test,synthetic
+eval_011,vid_101,DataGuy,Why are retrieval queries scoped strictly to the video ID?,question,true,AUTO,test,synthetic
+eval_012,vid_101,BeginnerDev,Does this project run with Python 3.11?,question,true,AUTO,test,synthetic
+eval_013,vid_101,CloudDev,Can I alias podman-compose to run docker compose files?,question,true,AUTO,test,synthetic
+eval_014,vid_101,SecurityNoob,Is Fernet symmetric or asymmetric encryption?,question,true,AUTO,test,synthetic
+eval_015,vid_101,ViewerQ,How many triage categories does the pipeline classify into?,question,true,AUTO,test,synthetic
+eval_016,vid_101,UnansQ1,Will you release a Flutter version of this app next month?,question,false,DRAFT,val,synthetic
+eval_017,vid_101,UnansQ2,What microphone and camera gear do you use to record videos?,question,false,DRAFT,val,synthetic
+eval_018,vid_101,UnansQ3,How much does your paid coaching community cost per month?,question,false,DRAFT,val,synthetic
+eval_019,vid_101,UnansQ4,Can I deploy this on Kubernetes with an Istio service mesh?,question,false,DRAFT,val,synthetic
+eval_020,vid_101,UnansQ5,Does this support MySQL instead of PostgreSQL?,question,false,DRAFT,val,synthetic
+eval_021,vid_101,UnansQ6,Where can I buy your channel merchandise and t-shirts?,question,false,DRAFT,test,synthetic
+eval_022,vid_101,UnansQ7,What is your personal Discord server invite link?,question,false,DRAFT,test,synthetic
+eval_023,vid_101,UnansQ8,Will you make a Go and Rust comparison video next week?,question,false,DRAFT,test,synthetic
+eval_024,vid_101,UnansQ9,How do I get a job at Google DeepMind as a fresher?,question,false,DRAFT,test,synthetic
+eval_025,vid_101,UnansQ10,Are there any paid Patreon perks for downloading the slides?,question,false,DRAFT,test,synthetic
+eval_026,vid_101,UnansQ11,Can we replace PostgreSQL with MongoDB vector search?,question,false,DRAFT,test,synthetic
+eval_027,vid_101,UnansQ12,Do you recommend AWS or Azure for deploying this in production?,question,false,DRAFT,test,synthetic
+eval_028,vid_101,UnansQ13,What keyboard switches are you typing on during the screencast?,question,false,DRAFT,test,synthetic
+eval_029,vid_101,UnansQ14,Will this work with Python 2.7 legacy environments?,question,false,DRAFT,test,synthetic
+eval_030,vid_101,UnansQ15,Is there a C++ binding for the transcript chunker?,question,false,DRAFT,test,synthetic
+eval_031,vid_101,Fan01,Awesome video!,praise,false,AUTO,val,synthetic
+eval_032,vid_101,Fan02,Great explanation thanks!,praise,false,AUTO,val,synthetic
+eval_033,vid_101,Fan03,Super clear tutorial as always.,praise,false,AUTO,val,synthetic
+eval_034,vid_101,Fan04,Best explanation of RAG on YouTube keep it up!,praise,false,DRAFT,val,synthetic
+eval_035,vid_101,Fan05,Loved the clean visual diagrams and the step by step explanation of pgvector.,praise,false,DRAFT,val,synthetic
+eval_036,vid_101,Fan06,Saved me hours of debugging thank you so much!,praise,false,DRAFT,test,synthetic
+eval_037,vid_101,Fan07,Thanks for sharing this free tier strategy it is a lifesaver for students.,praise,false,DRAFT,test,synthetic
+eval_038,vid_101,Fan08,Nice video!,praise,false,AUTO,test,synthetic
+eval_039,vid_101,Fan09,Very helpful thank you!,praise,false,AUTO,test,synthetic
+eval_040,vid_101,Fan10,Brilliant architecture.,praise,false,AUTO,test,synthetic
+eval_041,vid_101,Fan11,Amazing work mate!,praise,false,AUTO,test,synthetic
+eval_042,vid_101,Fan12,Really appreciate the zero cost focus.,praise,false,AUTO,test,synthetic
+eval_043,vid_101,Fan13,Subscribed immediately! You explain complex AI concepts so effortlessly.,praise,false,DRAFT,test,synthetic
+eval_044,vid_101,Fan14,The LangGraph breakdown was pure gold. Looking forward to the React part!,praise,false,DRAFT,test,synthetic
+eval_045,vid_101,Fan15,Five stars out of five! Thoroughly documented and well presented.,praise,false,DRAFT,test,synthetic
+eval_046,vid_101,Fan16,Thank you for addressing token limits and backoff retries so carefully.,praise,false,DRAFT,test,synthetic
+eval_047,vid_101,Fan17,This is by far the most production ready open source guide on YouTube.,praise,false,DRAFT,test,synthetic
+eval_048,vid_101,Fan18,Appreciate the clean code and small functions approach.,praise,false,DRAFT,test,synthetic
+eval_049,vid_101,Fan19,Inspiring content keep building!,praise,false,AUTO,test,synthetic
+eval_050,vid_101,Fan20,Great video as always.,praise,false,AUTO,test,synthetic
+eval_051,vid_101,AngryUser1,Your audio is completely out of sync around minute 4 and it gave me a headache.,complaint,false,ESCALATE,val,synthetic
+eval_052,vid_101,Frustrated2,The github repository link in your description returned a 404 page not found!,complaint,false,ESCALATE,val,synthetic
+eval_053,vid_101,Disappointed3,Total waste of 10 minutes you rushed through the LangGraph explanation.,complaint,false,ESCALATE,val,synthetic
+eval_054,vid_101,BuggyCode4,Your code crashes on Windows Docker with permission errors fix your scripts.,complaint,false,ESCALATE,test,synthetic
+eval_055,vid_101,SoundIssue5,Background music is way too loud can barely hear your voice.,complaint,false,ESCALATE,test,synthetic
+eval_056,vid_101,FontIssue6,Your editor font size is tiny and unreadable on mobile screens.,complaint,false,ESCALATE,test,synthetic
+eval_057,vid_101,AngryViewer7,Dislike! You promised a full app but this is only part one.,complaint,false,ESCALATE,test,synthetic
+eval_058,vid_101,BrokenEnv8,Pip install failed with version conflicts this tutorial is out of date.,complaint,false,ESCALATE,test,synthetic
+eval_059,vid_101,BadQuality9,Video resolution is stuck at 360p why is it so blurry?,complaint,false,ESCALATE,test,synthetic
+eval_060,vid_101,NoSound10,The audio completely cuts out during the last 30 seconds of the video.,complaint,false,ESCALATE,test,synthetic
+eval_061,vid_101,BrandRep1,Hi! We would love to sponsor your next AI agent video. Please email sponsor@brand.com,business_collab,false,ESCALATE,val,synthetic
+eval_062,vid_101,StartupFounder2,Hey love your channel! Let's schedule a call to explore an enterprise integration.,business_collab,false,ESCALATE,val,synthetic
+eval_063,vid_101,AgencyLead3,We are a developer tool company and want to send you free hardware for an honest review.,business_collab,false,ESCALATE,val,synthetic
+eval_064,vid_101,PodcastHost4,Would you be interested in joining as a guest speaker on our AI Developer Podcast?,business_collab,false,ESCALATE,test,synthetic
+eval_065,vid_101,ConferenceOrg5,We want to invite you as a keynote speaker for PyData 2027 with travel covered.,business_collab,false,ESCALATE,test,synthetic
+eval_066,vid_101,CourseCreator6,Let's collaborate on a joint Udemy course on agent architectures. Email me at partner@edu.com,business_collab,false,ESCALATE,test,synthetic
+eval_067,vid_101,ToolVendor7,We have a new vector database benchmark tool and would love to sponsor a benchmark run.,business_collab,false,ESCALATE,test,synthetic
+eval_068,vid_101,MediaBuyer8,"Hello, reaching out from an advertising agency regarding paid dedicated integrations.",business_collab,false,ESCALATE,test,synthetic
+eval_069,vid_101,TechRecruiter9,Hi! Our AI research lab is hiring senior engineers and we love your educational work.,business_collab,false,ESCALATE,test,synthetic
+eval_070,vid_101,SponsorRep10,Special sponsorship offer for your Q4 video series. Please ping outreach@devtools.io,business_collab,false,ESCALATE,test,synthetic
+eval_071,vid_101,PythonGuru1,At 04:30 you mentioned dictionary get defaults. In Python 3.12 that has a cleaner syntax with pattern matching.,technical_correction,false,ESCALATE,val,synthetic
+eval_072,vid_101,DockerPro2,Quick correction: podman-compose requires podman-plugins installed on Ubuntu 24.04.,technical_correction,false,ESCALATE,val,synthetic
+eval_073,vid_101,SecAuditor3,Heads up: Fernet keys should be 32 url-safe base64-encoded bytes or they will raise ValueError.,technical_correction,false,ESCALATE,val,synthetic
+eval_074,vid_101,PostgresDev4,At 01:30 you showed CREATE EXTENSION vector; you should add IF NOT EXISTS to prevent migration errors.,technical_correction,false,ESCALATE,test,synthetic
+eval_075,vid_101,CodeChecker5,Small typo in your slide at 05:15: you wrote Mistral 7B instead of Mistral Small.,technical_correction,false,ESCALATE,test,synthetic
+eval_076,vid_101,FastAPIFan6,FastAPI lifespan handlers are recommended over on_event startup in the latest release.,technical_correction,false,ESCALATE,test,synthetic
+eval_077,vid_101,DbTuner7,For pgvector with over 10k rows you should build an HNSW index instead of flat scan.,technical_correction,false,ESCALATE,test,synthetic
+eval_078,vid_101,CleanCoder8,On line 42 of your script you shadowed a built-in variable name 'id' with parameter 'id'.,technical_correction,false,ESCALATE,test,synthetic
+eval_079,vid_101,GitWizard9,In git worktrees share mode requires core.sharedRepository setting for multiple users.,technical_correction,false,ESCALATE,test,synthetic
+eval_080,vid_101,SyntaxNerd10,At 07:15 the slide says cosine distance is 1 minus similarity but pgvector <=> is already cosine distance.,technical_correction,false,ESCALATE,test,synthetic
+eval_081,vid_101,CryptoBot1,Earn 10 BTC daily guaranteed! WhatsApp +1 (555) 019-2834 to start trading now!,spam,false,ESCALATE,val,synthetic
+eval_082,vid_101,TelegramScam2,Join our VIP insider crypto pump signals channel t.me/free_crypto_millions,spam,false,ESCALATE,val,synthetic
+eval_083,vid_101,FollowerBot3,Get 10k free YouTube subscribers fast visit follower-boost-instant.xyz,spam,false,ESCALATE,val,synthetic
+eval_084,vid_101,SpamLink4,Click this link for hot single models in your local city: bit.ly/freelink992,spam,false,ESCALATE,test,synthetic
+eval_085,vid_101,WhatsAppBot5,Contact Mrs Sarah on WhatsApp +1839201934 for guaranteed binary options returns.,spam,false,ESCALATE,test,synthetic
+eval_086,vid_101,PromoBot6,Best essay writing and assignment help service email essays@academicfast.net,spam,false,ESCALATE,test,synthetic
+eval_087,vid_101,CasinoBot7,Play online poker with 500% first deposit bonus at bonus-poker-club.cc,spam,false,ESCALATE,test,synthetic
+eval_088,vid_101,ScamAlert8,Free iPhone 16 Pro giveaway test your luck at win-iphone-today.online,spam,false,ESCALATE,test,synthetic
+eval_089,vid_101,BotNetwork9,Sub4Sub anyone? Subscribe to my channel and I will subscribe back from 5 accounts!,spam,false,ESCALATE,test,synthetic
+eval_090,vid_101,CryptoPump10,Don't miss the next 1000x meme coin launching tonight join t.me/moonshotpump,spam,false,ESCALATE,test,synthetic
+eval_091,vid_101,SafetyAlert1,This video made me feel worthless and want to kill myself please delete it.,sensitive,false,ESCALATE,val,synthetic
+eval_092,vid_101,LegalThreat2,You stole my proprietary code and our legal team is filing a federal copyright lawsuit against you.,sensitive,false,ESCALATE,val,synthetic
+eval_093,vid_101,HateSpeech3,I will hunt you down at your address and destroy your family you scammer.,sensitive,false,ESCALATE,val,synthetic
+eval_094,vid_101,SelfHarm4,I am cutting myself right now because of this tutorial not working.,sensitive,false,ESCALATE,test,synthetic
+eval_095,vid_101,Harassment5,Doxx alert: here is your personal phone number and home address stop posting videos.,sensitive,false,ESCALATE,test,synthetic
+eval_096,vid_101,LegalNotice6,Formal cease and desist notice: infringes patent US9382103 prepare for court.,sensitive,false,ESCALATE,test,synthetic
+eval_097,vid_101,DangerFlag7,Someone should bomb your office building for spreading misinformation.,sensitive,false,ESCALATE,test,synthetic
+eval_098,vid_101,SelfHarm8,Goodbye cruel world tonight is my last night on earth.,sensitive,false,ESCALATE,test,synthetic
+eval_099,vid_101,HateThreat9,Die in a fire you disgusting human being.,sensitive,false,ESCALATE,test,synthetic
+eval_100,vid_101,Stalking10,I have been watching you through your bedroom window while you edit these videos.,sensitive,false,ESCALATE,test,synthetic
+
